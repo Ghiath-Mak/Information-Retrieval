@@ -1,0 +1,12 @@
+The email: sometest@gmail.com			is a valid email.
+The email: some+test@gmail.com			is a valid email.
+The email: stuart.sillitoe@prodirectsport.net	is a valid email.
+The email: _valid@mail.com			is a valid email.
+The email: also+valid@domain.com		is a valid email.
+The email: invalíd@mail.com			is an invalid email.
+The email: invalid%$£"@domain.com		is an invalid email.
+The email: invalid£@domain.com			is an invalid email.
+The email: valid%$@domain.com			is a valid email.
+The email: invali"d@domain.com			is an invalid email.
+The email: 555@333.com				is a valid email.
+The email: 555@333				is a valid email.

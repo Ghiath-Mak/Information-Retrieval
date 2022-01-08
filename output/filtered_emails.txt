@@ -1,0 +1,13 @@
+sometest@gmail.com 
+ some+test@gmail.com 
+ stuart.sillitoe@prodirectsport.net 
+ _valid@mail.com 
+ also+valid@domain.com 
+ invalídmail.com 
+ invalid%$£"domain.com 
+ invalid£domain.com 
+ valid%$@domain.com 
+ invali"ddomain.com 
+ 555@333.com 
+ 555333 
+ 
