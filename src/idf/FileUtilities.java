@@ -40,6 +40,9 @@ public class FileUtilities {
      */
     public static List<String> getWordsListFromFile(File file) {
         try {
+            if (!file.exists()) {
+                throw new FileNotFoundException();
+            }
             List<String> words = new ArrayList<>();
             Scanner scanner = new Scanner(file);
             while (scanner.hasNext()) {

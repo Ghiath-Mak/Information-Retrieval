@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -148,6 +150,12 @@ public class InverseDocumentFrequency {
             return null;
         }
     }
+    
+    public List<String> getFilesNames() {
+        List<String> filesNames = new ArrayList();
+        getFiles().forEach(file -> filesNames.add(file.getName()));
+        return filesNames;
+    }
 
     public double calculateIDF(String word) {
 
@@ -234,13 +242,16 @@ public class InverseDocumentFrequency {
 
     /**
      * Calculate the cosine-similarity of a query against the current documents
-     * and prints the results.
+     * and puts the results in a Map.
      *
      * @param query
+     * @return a Map that contains the names of the documents and thier corresponding
+     * cosine-similarity afainst the given query.
      */
-    public void calculateCosineSimilarity(String query) {
+    public Map<String, Double> calculateCosineSimilarities(String query) {
+        Map<String, Double> similarities = new LinkedHashMap<>();
 
-        for (File document : getFiles()) {
+        getFiles().forEach(document -> {
             double numerator = 0;
             double denominator = 0;
             double sumOfDocTfIdf = 0;
@@ -254,10 +265,10 @@ public class InverseDocumentFrequency {
             }
 
             denominator = Math.sqrt(sumOfQueryTfIdf * sumOfDocTfIdf);
-            System.out.format("%s:\t%.4f\n",
-                    document.getName(),
-                    numerator / denominator);
-        }
+            similarities.put(document.getName(), numerator / denominator);
+        });
+
+        return similarities;
     }
 
     /**
